@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片像素化工具</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>图片像素化</h1>
+      <p>上传图片，生成指定尺寸的像素风格PNG</p>
+    </header>
+    <main class="tool-container">
+      <div class="controls">
+        <div class="control-group">
+          <label for="upload-btn">1. 上传图片</label>
+          <div class="file-input-wrapper">
+            <button class="btn btn-primary">选择文件</button>
+            <input type="file" id="upload-btn" accept="image/*">
+          </div>
+        </div>
+        <div class="control-group">
+          <label>2. 选择输出尺寸</label>
+          <div class="size-options">
+            <button class="btn btn-secondary size-btn" data-size="16">16x16</button>
+            <button class="btn btn-secondary size-btn" data-size="32">32x32</button>
+            <button class="btn btn-secondary size-btn" data-size="64">64x64</button>
+            <button class="btn btn-secondary size-btn" data-size="128">128x128</button>
+          </div>
+          <div class="custom-size">
+            <input type="number" id="width-input" placeholder="宽">
+            <span>×</span>
+            <input type="number" id="height-input" placeholder="高">
+          </div>
+        </div>
+        <div class="control-group">
+          <label>3. 选项</label>
+          <div class="switch-container">
+            <span>透明通道</span>
+            <label class="switch">
+              <input type="checkbox" id="alpha-toggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="control-group">
+          <button id="generate-btn" class="btn btn-primary">生成像素图</button>
+        </div>
+      </div>
+      <div class="preview-area">
+        <canvas id="preview-canvas"></canvas>
+        <div id="placeholder" class="placeholder-text">
+          <p>在这里预览像素化后的图片</p>
+        </div>
+  
+  
+      </div>
+
+
+      <div class="output-actions">
+          <a id="download-btn" class="btn btn-secondary" style="display: none;">下载PNG</a>
+      </div>
+
+    </main>
+  </div>
+  <script src="../assets/js/pixelate.js"></script>
+</body>
+</html>
+
